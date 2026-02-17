@@ -10,5 +10,6 @@ dependencies = [
   "fastmcp==2.12.3",
 ]
 
-[tool.setuptools]
-packages = ["app"]
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["app*"]
