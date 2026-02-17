@@ -1,4 +1,4 @@
-from app.mcp.server import mcp
+from app.mcp.mcp_app import mcp
 from app.services.math_service import MathService
 
 @mcp.tool()
