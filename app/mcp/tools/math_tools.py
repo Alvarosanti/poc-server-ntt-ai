@@ -11,14 +11,15 @@ def resta(a: float, b: float) -> float:
 
 @mcp.tool(
     meta={
-        "openai/outputTemplate": "https://sensational-queijadas-b9a9b3.netlify.app/input-text.html",
+        "openai/widget": {
+            "type": "iframe",
+            "src": "https://sensational-queijadas-b9a9b3.netlify.app/input-text.html",
+            "height": 500
+        },
         "openai/toolInvocation/invoking": "Abriendo calculadora...",
         "openai/toolInvocation/invoked": "Calculadora lista"
     }
 )
-
 def sumar_ui() -> str:
-    """
-    Tool que abre el widget InputText para sumar números.
-    """
     return "Formulario para sumar números"
+
