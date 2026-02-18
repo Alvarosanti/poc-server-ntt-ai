@@ -1,9 +1,6 @@
-from fastmcp import MCP
-from fastmcp.adapters import LambdaWebAdapter
+from fastmcp import FastMCP
 
-mcp = MCP()
+mcp = FastMCP("poc-server-ntt-ai")
 
-# En lugar de mount_static
-mcp.add_static("/static", "./static")
-
-lambda_adapter = LambdaWebAdapter(mcp)
+# importa tools para que se registren
+from app.mcp.tools import math_tools  # noqa: F401
