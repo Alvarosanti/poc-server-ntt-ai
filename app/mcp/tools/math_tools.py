@@ -1,6 +1,6 @@
 from app.mcp.mcp_app import mcp
 from app.services.math_service import MathService
-
+from fastmcp.server.apps import AppConfig
 
 @mcp.tool()
 def suma(a: float, b: float) -> float:
@@ -11,20 +11,12 @@ def suma(a: float, b: float) -> float:
 def resta(a: float, b: float) -> float:
     return MathService.resta(a, b)
 
+VIEW_URI = "ui://calculator/input-text.html"
 
 @mcp.tool(
-    description=(
-        "Abre una calculadora visual cuando el usuario quiera sumar dos números. "
-        "Debe usarse siempre que el usuario exprese intención de sumar."
-    ),
-    meta={
-        "openai/widget": {
-            "type": "iframe",
-            "src": "https://sensational-queijadas-b9a9b3.netlify.app/input-text.html",
-            "height": 500
-        }
-    }
+    description="Abre una calculadora visual para sumar números.",
+    app=AppConfig(resource_uri=VIEW_URI)
 )
 def sumar_ui() -> str:
-    return "Abriendo calculadora visual."
+    return "Calculadora lista."
 
