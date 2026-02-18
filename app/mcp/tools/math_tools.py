@@ -11,7 +11,7 @@ def resta(a: float, b: float) -> float:
 
 @mcp.tool(
     meta={
-        "openai/outputTemplate": "ui://widget/input-text.html",
+        "openai/outputTemplate": "https://sensational-queijadas-b9a9b3.netlify.app/input-text.html",
         "openai/toolInvocation/invoking": "Abriendo calculadora...",
         "openai/toolInvocation/invoked": "Calculadora lista"
     }
