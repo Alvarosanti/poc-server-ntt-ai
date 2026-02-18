@@ -10,6 +10,11 @@ def resta(a: float, b: float) -> float:
     return MathService.resta(a, b)
 
 @mcp.tool(
+    description=(
+        "Abre una interfaz visual para que el usuario ingrese dos números "
+        "cuando quiera realizar una suma. "
+        "Debe usarse siempre que el usuario exprese intención de sumar."
+    ),
     meta={
         "openai/widget": {
             "type": "iframe",
@@ -21,5 +26,5 @@ def resta(a: float, b: float) -> float:
     }
 )
 def sumar_ui() -> str:
-    return "Formulario para sumar números"
+    return "Abriendo calculadora visual."
 
