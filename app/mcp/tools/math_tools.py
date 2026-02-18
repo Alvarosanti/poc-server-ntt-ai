@@ -12,19 +12,14 @@ def resta(a: float, b: float) -> float:
 @mcp.tool(
     description=(
         "Abre una interfaz visual para que el usuario ingrese dos números "
-        "cuando quiera realizar una suma. "
-        "Debe usarse siempre que el usuario exprese intención de sumar."
+        "cuando quiera realizar una suma."
     ),
     meta={
-        "openai/widget": {
-            "type": "iframe",
-            "src": "https://sensational-queijadas-b9a9b3.netlify.app/input-text.html",
-            "height": 500
-        },
+        "openai/outputTemplate": "ui://widget/input-text.html",
         "openai/toolInvocation/invoking": "Abriendo calculadora...",
         "openai/toolInvocation/invoked": "Calculadora lista"
     }
 )
 def sumar_ui() -> str:
-    return "Abriendo calculadora visual."
+    return "Calculadora visual abierta."
 
